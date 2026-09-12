@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calliope — a visual space for things worth keeping.">
+  <title>Calliope</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Calliope home">Calliope</a>
+    <nav class="nav">
+      <a class="active" href="#home">Explore</a>
+      <a href="#collections">Collections</a>
+      <a href="#about">About</a>
+    </nav>
+    <div class="actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Search">⌕</button>
+      <button class="profile-btn" id="profileBtn">You</button>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div>
+      <p class="eyebrow">A visual archive</p>
+      <h1>Keep the things<br><em>that inspire you.</em></h1>
+      <p class="hero-copy">Discover images, ideas and little pieces of the internet worth coming back to.</p>
+    </div>
+    <div class="hero-note">
+      <span>01</span>
+      <p>Save freely.<br>Curate slowly.</p>
+    </div>
+  </section>
+
+  <div class="search-wrap" id="searchWrap">
+    <input id="searchInput" type="search" placeholder="Search your inspiration…" autocomplete="off">
+  </div>
+
+  <main>
+    <div class="section-heading">
+      <h2>For you</h2>
+      <button class="filter-btn" id="filterBtn">All <span>⌄</span></button>
+    </div>
+
+    <div class="chips" id="chips">
+      <button class="chip selected" data-category="all">All</button>
+      <button class="chip" data-category="interiors">Interiors</button>
+      <button class="chip" data-category="fashion">Fashion</button>
+      <button class="chip" data-category="nature">Nature</button>
+      <button class="chip" data-category="art">Art</button>
+      <button class="chip" data-category="food">Food</button>
+    </div>
+
+    <section class="masonry" id="feed"></section>
+    <p class="empty" id="empty">Nothing here yet.</p>
+  </main>
+
+  <footer id="about">
+    <div class="footer-brand">Calliope</div>
+    <p>A quiet corner for beautiful things.</p>
+    <span>© 2026 Calliope</span>
+  </footer>
+
+  <div class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-label="Pin details">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card">
+      <button class="modal-close" data-close aria-label="Close">×</button>
+      <img id="modalImage" src="" alt="">
+      <div class="modal-content">
+        <p class="eyebrow" id="modalCategory"></p>
+        <h3 id="modalTitle"></h3>
+        <p id="modalText"></p>
+        <button class="save-btn" id="saveBtn">♡ Save to collection</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Saved to your collection</div>
+  <script src="script.js"></script>
+</body>
+</html>
